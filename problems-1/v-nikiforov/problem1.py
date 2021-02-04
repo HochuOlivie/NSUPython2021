@@ -1,6 +1,6 @@
-arr = []
+number = 0
 result = [0]
 for i in input().split():
-    arr.append(int(i))
-    result.append(sum(arr))
+    number += int(i)
+    result.append(number)
 print(result)
