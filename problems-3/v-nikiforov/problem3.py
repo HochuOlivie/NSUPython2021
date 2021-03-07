@@ -19,16 +19,6 @@ class Vector(object):
     def __rmul__(self, other):
         return self.__mul__(other)
 
-    def __truediv__(self, other):
-        if isinstance(other, Vector):
-            divided = tuple(self[i] / other[i] for i in range(len(self)))
-        elif isinstance(other, (int, float)):
-            divided = tuple(a / other for a in self)
-        else:
-            raise ValueError(f"Division with type {type(other)} not supported")
-
-        return self.__class__(*divided)
-
     def __add__(self, other):
         if isinstance(other, Vector):
             added = tuple(a + b for a, b in zip(self, other))
@@ -75,5 +65,3 @@ print(v1 * v2)
 print(v1 * 4)
 print(10 * v2)
 print(v2 - v1)
-print(v2 / v1)
-print(v2 / v1)

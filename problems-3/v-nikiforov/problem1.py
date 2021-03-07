@@ -46,7 +46,7 @@ class Table:
             ans = list(map(lambda x: x[item[1]], lines))
             return ans if type(item[1]) == slice else Column(ans)
         except IndexError:
-            raise Exception("Matrix index out of bound")
+            raise IndexError("Matrix index out of bound")
 
 
 class Column(list):
