@@ -8,6 +8,7 @@ CELL_SIZE = (25, 25)
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 GREY = (130, 130, 130)
+YELLOW = (255, 242, 0)
 GRID_WIDTH = 1
 SIMULATION_SPEED = 9
 FPS = 40
@@ -24,7 +25,7 @@ def fill_rects(screen, pos_array):
     :return: None
     """
     for pos in pos_array:
-        pygame.draw.rect(screen, (255, 242, 0), pygame.Rect(pos[0], pos[1], *CELL_SIZE))
+        pygame.draw.rect(screen, YELLOW, pygame.Rect(pos[0], pos[1], *CELL_SIZE))
 
 
 def init_game():
@@ -124,10 +125,10 @@ def draw_text(screen, running):
     """
     font_size = 20
     font = pygame.font.Font("static/fonts/Monaco.ttf", font_size)
-    guide1 = font.render("SPACE to start simulation", False, (0, 0, 0))
-    guide2 = font.render("ENTER to make one step", False, (0, 0, 0))
-    guide3 = font.render("BACKSPACE to clear", False, (0, 0, 0))
-    running_text1 = font.render(f"Running: ", False, (0, 0, 0))
+    guide1 = font.render("SPACE to start simulation", False, BLACK)
+    guide2 = font.render("ENTER to make one step", False, BLACK)
+    guide3 = font.render("BACKSPACE to clear", False, BLACK)
+    running_text1 = font.render(f"Running: ", False, BLACK)
     if running:
         running_text2 = font.render(" " * 9 + "yes", False, (11, 102, 35))
     else:
